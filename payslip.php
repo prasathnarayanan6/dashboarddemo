@@ -167,12 +167,13 @@ $pdf->Ln(5);
 // table starts from here
 include 'conn.php';
 if(isset($_GET['id']) && isset($_GET['date'])){
+
     $id = $_GET['id'];
     $date = $_GET['date'];
     //$date = $_GET['date'];
    // $date = $_GET['date'];
    // $sql= "select e.*,s.desig, s.salary, d.epf, d.pt, d.hi, d.tds, d.deduction, b.bname, b.bno, b.ifsc, b.bbranch from emp e , salary s, deduction d, bank b where e.emp_id='$id' AND e.emp_id = s.emp_id AND e.emp_id = d.emp_id AND e.emp_id = b.emp_id";
-    $sql= "select employee.*,deduction.* from employee, deduction where employee.id='$id' AND employee.id= deduction.id";
+    $sql= "select employee.*,deduction.* from employee, deduction where employee.id='$id' AND employee.id= deduction.id AND month='".$date."'";
     //$sql= "select e.*,s.desig, s.salary, d.deduction, b.bname, b.bno, b.ifsc, b.bbranch from emp e , salary s, deduction d, bank b where e.emp_id='$id' AND e.emp_id = s.emp_id AND e.emp_id = d.emp_id AND e.emp_id = b.emp_id";
     $result = $conn->query($sql);
 //if ($result->num_rows > 0) {
@@ -210,6 +211,55 @@ if(isset($_GET['id']) && isset($_GET['date'])){
         $pd = $row['pd'];
         $na=$row['na'];
         // $pf=$row['pf'];
+        function convertNumber($num = false)
+{
+    $num = str_replace(array(',', ''), '' , trim($num));
+    if(! $num) {
+        return false;
+    }
+    $num = (int) $num;
+    $words = array();
+    $list1 = array('', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven',
+        'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
+    );
+    $list2 = array('', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety', 'hundred');
+    $list3 = array('', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion',
+        'octillion', 'nonillion', 'decillion', 'undecillion', 'duodecillion', 'tredecillion', 'quattuordecillion',
+        'quindecillion', 'sexdecillion', 'septendecillion', 'octodecillion', 'novemdecillion', 'vigintillion'
+    );
+    $num_length = strlen($num);
+    $levels = (int) (($num_length + 2) / 3);
+    $max_length = $levels * 3;
+    $num = substr('00' . $num, -$max_length);
+    $num_levels = str_split($num, 3);
+    for ($i = 0; $i < count($num_levels); $i++) {
+        $levels--;
+        $hundreds = (int) ($num_levels[$i] / 100);
+        $hundreds = ($hundreds ? ' ' . $list1[$hundreds] . ' hundred' . ( $hundreds == 1 ? '' : '' ) . ' ' : '');
+        $tens = (int) ($num_levels[$i] % 100);
+        $singles = '';
+        if ( $tens < 20 ) {
+            $tens = ($tens ? ' and ' . $list1[$tens] . ' ' : '' );
+        } elseif ($tens >= 20) {
+            $tens = (int)($tens / 10);
+            $tens = ' and ' . $list2[$tens] . ' ';
+            $singles = (int) ($num_levels[$i] % 10);
+            $singles = ' ' . $list1[$singles] . ' ';
+        }
+        $words[] = $hundreds . $tens . $singles . ( ( $levels && ( int ) ( $num_levels[$i] ) ) ? ' ' . $list3[$levels] . ' ' : '' );
+    } //end for loop
+    $commas = count($words);
+    if ($commas > 1) {
+        $commas = $commas - 1;
+    }
+    $words = implode(' ',  $words);
+    $words = preg_replace('/^\s\b(and)/', '', $words );
+    $words = trim($words);
+    $words = ucfirst($words);
+    $words = $words." ";
+    return $words;
+} 
+$amountword = convertNumber($na);
 
   
         //$salary = $row["salary"];
@@ -482,7 +532,7 @@ $pdf->Ln();
 
 // Vertical alignment
 $pdf->MultiCell(90, 9, 'Amount in Words', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(90, 9, 'Rs ', 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
+$pdf->MultiCell(90, 9, 'Rs '.$amountword.' only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
 $pdf->Ln();
