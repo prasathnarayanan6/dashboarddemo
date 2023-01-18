@@ -609,13 +609,12 @@ $pdf->Ln();
 // }
 // $html .= '</table>';
 // $pdf->writeHTML($html, true, false, true, false, '');
-$html = '<div></div><br><img src="./TCPDF/examples/images/sealll.jpeg"></img><h4>Nazin Nisha</h4>
-<h4>HR &amp; Legal Manager</h4>
-';
+$html = '<div></div><img src="./TCPDF/examples/images/naznin.jpg" width="100"></img><h4>Naznin Nisha</h4>
+<h4>HR &amp; Legal Manager</h4>';
 $pdf->writeHTML($html, true, false, true, false, '');
 
 //Close and output PDF document
-$pdf->Output('example_004.pdf', 'I');
+$pdf->Output('"'.$id.'_'.$month.'".pdf', 'I');
 
 //============================================================+
 // END OF FILE
