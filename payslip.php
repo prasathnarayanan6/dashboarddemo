@@ -531,8 +531,8 @@ $pdf->MultiCell(45, 9, 'Rs '.$na, 1, 'J', 1, 0, '', '', true, 0, true, true, 12,
 $pdf->Ln();
 
 // Vertical alignment
-$pdf->MultiCell(90, 9, 'Amount in Words', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(90, 9, 'Rs '.$amountword.' only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(90, 11, 'Amount in Words', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(90, 11, 'Rs '.$amountword.' only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
 $pdf->Ln();

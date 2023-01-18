@@ -90,7 +90,7 @@ require "conn.php";
             $td = $epfe+$esic+$hi;
             $twd = $_POST['twd'];
             $pd = $_POST['pd'];
-            $na = $ga-$td;
+            $na = $gs-$td;
             $query1 = "insert into deduction(id,month,salary,basic,da,hra,pf,sa,epfe,epfr,esic,tds,hi,gs,td,twd,pd,na) values('$ids', '$month', '$salary', '$basic','$da','$hra','$pf', '$sa', '$epfe', '$epfr', '$esic', '$tds', '$hi', '$gs', '$td', '$twd', '$pd', '$na')";
             if($conn->query($query1)==TRUE){
                  echo "<script>
@@ -146,7 +146,7 @@ require "conn.php";
                                 <!-- <p><input class="form-control" placeholder="Net Amount" name="na"></p>  -->
                                 <div style="overflow:auto;">
                                     <div style="float:right;">
-                                        <button type="submit" name="mm">Previous</button>
+                                        <button type="submit" name="mm">Submit</button>
                                     </div>
                                  </div>
                               </form>
