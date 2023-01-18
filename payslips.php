@@ -80,17 +80,17 @@ require "conn.php";
             else{
                 $pf=($salary-$hra)*0.12;
             }
-            $sa = $_POST['sa'];
             $epfe = $pf;
             $epfr = $pf;
             $esic = ($salary)*0.0075;
             $tds = $_POST['tds'];
             $hi = $_POST['hi'];
+            $sa = $hi + $esic + $epfe;
             $gs = $_POST['gs'];
             $td = $epfe+$esic+$hi;
             $twd = $_POST['twd'];
             $pd = $_POST['pd'];
-            $na = $_POST['na'];
+            $na = $ga-$td;
             $query1 = "insert into deduction(id,month,salary,basic,da,hra,pf,sa,epfe,epfr,esic,tds,hi,gs,td,twd,pd,na) values('$ids', '$month', '$salary', '$basic','$da','$hra','$pf', '$sa', '$epfe', '$epfr', '$esic', '$tds', '$hi', '$gs', '$td', '$twd', '$pd', '$na')";
             if($conn->query($query1)==TRUE){
                  echo "<script>
@@ -133,7 +133,7 @@ require "conn.php";
                                 <p><input class="form-control" placeholder="Salary" name="salary"></p>
                                 <!-- <p><input class="form-control" placeholder="Basic" name="basic"></p> -->
                                 <!-- <p><input class="form-control" placeholder="DA" name="da"></p> -->
-                                <p><input class="form-control" placeholder="Special allowances" name="sa"></p>
+                                <!-- <p><input class="form-control" placeholder="Special allowances" name="sa"></p> -->
                                 <!-- <p><input class="form-control" placeholder="EPF Employee Con"  name="epfe"></p> 
                                 <p><input class="form-control" placeholder="EPF Employer Con"  name="epfr"></p>-->
                                 <!-- <p><input class="form-control" placeholder="ESIC" name="esic"></p> -->
@@ -143,7 +143,7 @@ require "conn.php";
                                 <p><input class="form-control" placeholder="Total working days" name="twd"></p>
                                 <p><input class="form-control" placeholder="Paid days" name="pd"></p>
                                 <!-- <p><input class="form-control" placeholder="Total Dediction" name="td"></p> -->
-                                <p><input class="form-control" placeholder="Net Amount" name="na"></p> 
+                                <!-- <p><input class="form-control" placeholder="Net Amount" name="na"></p>  -->
                                 <div style="overflow:auto;">
                                     <div style="float:right;">
                                         <button type="submit" name="mm">Previous</button>
