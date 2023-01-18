@@ -273,7 +273,7 @@ $pdf->SetFillColor(255, 255, 255);
 
 // Vertical alignment
 $pdf->MultiCell(45, 9, 'Employee Name', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$name, 1, 'J', 1, 0, '', '', true, 0,true,true, 12, 'T');
+$pdf->MultiCell(45, 9, ''.$name, 1, 'J', 1, 0, '', '', true,0,true,true, 12, 'T');
 $pdf->MultiCell(45, 9, 'Total Working Days', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, ''.$twd, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
 
