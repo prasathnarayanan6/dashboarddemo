@@ -532,7 +532,7 @@ $pdf->Ln();
 
 // Vertical alignment
 $pdf->MultiCell(90, 11, 'Amount in Words', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(90, 11, 'Rs '.$amountword.' only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(90, 11, ''.$amountword.' only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
 $pdf->Ln();
@@ -609,8 +609,8 @@ $pdf->Ln();
 // }
 // $html .= '</table>';
 // $pdf->writeHTML($html, true, false, true, false, '');
-$html = '<div></div><br><br><img src="./TCPDF/examples/images/seal.png"></img><h3>Nazin Nisha</h3>
-<h3>HR &amp; Legal Manager</h3>
+$html = '<div></div><br><img src="./TCPDF/examples/images/sealll.jpeg"></img><h4>Nazin Nisha</h4>
+<h4>HR &amp; Legal Manager</h4>
 ';
 $pdf->writeHTML($html, true, false, true, false, '');
 
