@@ -609,7 +609,7 @@ $pdf->Ln();
 // }
 // $html .= '</table>';
 // $pdf->writeHTML($html, true, false, true, false, '');
-$html = '<div></div><br><br><h3>Nazin Nisha</h3>
+$html = '<div></div><br><br><img src="./TCPDF/examples/images/seal.png"></img><h3>Nazin Nisha</h3>
 <h3>HR &amp; Legal Manager</h3>
 ';
 $pdf->writeHTML($html, true, false, true, false, '');
