@@ -126,7 +126,7 @@ if(isset($_POST['Signin']))
 {
     $EmpID = $_POST["EmpID"];
     $password = $_POST["password"];
-    $query = "SELECT * FROM hr_login WHERE Emp_ID ='".$EmpID."' AND Password ='".$password."'";
+    $query = "SELECT * FROM llogin WHERE Emp_ID ='".$EmpID."' AND Password ='".$password."'";
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result)==1)
     {
