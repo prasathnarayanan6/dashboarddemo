@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin sign-in</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <style>
@@ -138,7 +139,13 @@ if(isset($_POST['Signin']))
     else
     {
       //echo "<script>alert('Incorrect');</script>";
-      echo "<div id='hello' class='alert alert-danger'>Username or password not correct</div>;";
+      echo "<script>
+      Swal.fire(
+          '😨',
+          'Wrong Password',
+          'error'
+        )
+      </script>";
     }
 }
 

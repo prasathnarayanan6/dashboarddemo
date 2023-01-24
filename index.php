@@ -1,6 +1,14 @@
 <?php
 require "conn.php";
 ?>
+<?php 
+session_start();
+require "conn.php";
+if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
+    header('location:home.php');
+	  die();
+}	//header('location:admin_login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
