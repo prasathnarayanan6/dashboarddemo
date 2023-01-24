@@ -134,7 +134,16 @@ if(isset($_POST['Signin']))
         session_start();
         $_SESSION['EmpID']=$EmpID;
         $_SESSION['password']=$password;
-        header("location:index.php");
+        // header("location:index.php");
+        echo "<script>
+        Swal.fire(
+            'Great!',
+            'Login Successfull',
+            'success'
+          ).then(function() {
+            window.location = 'index.php';
+          });
+        </script>";
     } 
     else
     {

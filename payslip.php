@@ -609,8 +609,8 @@ $pdf->Ln();
 // }
 // $html .= '</table>';
 // $pdf->writeHTML($html, true, false, true, false, '');
-$html = '<div></div><img src="./TCPDF/examples/images/naznin.jpg" width="100"></img><h4>Naznin Nisha</h4>
-<h4>HR &amp; Legal Manager</h4>';
+$html = '<div></div><img src="./TCPDF/examples/images/InShot_20230124_154749554.jpg" width="145"></img><h4>Naznin Nisha</h4>
+<h3>HR &amp; Legal Manager</h3>';
 $pdf->writeHTML($html, true, false, true, false, '');
 
 //Close and output PDF document
