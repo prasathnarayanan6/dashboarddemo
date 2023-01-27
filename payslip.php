@@ -123,9 +123,10 @@ $pdf->AddPage();
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $date = $_GET['date'];
+    $date1 =  date('F Y', strtotime($date));
 $pdf->Cell(0, 7, 'XYMA ANALYTICS PRIVATE LIMITED', 1, 1, 'C', 0, '', 0);
 $pdf->Cell(0, 8, 'B4 01 B Block 4th Floor Taramani IIT Madras Research Park Chennai-600113', 1, 1, 'C', 0, '', 0);
-$pdf->Cell(0, 7, 'PAY SLIP '.$date.'', 1, 1, 'C', 0, '', 0);
+$pdf->Cell(0, 7, 'PAY SLIP '.$date1.'', 1, 1, 'C', 0, '', 0);
 //$pdf->Cell(45, 0, 'TEST CELL STRETCH: scaling', 1, 1, 'C', 0, '', 1);
 //$pdf->Cell(45, 0, 'TEST CELL STRETCH: scaling', 1, 1, 'C', 0, '', 1);
 }
@@ -291,7 +292,7 @@ $pdf->Ln();
 $pdf->MultiCell(45, 9, 'Designation', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, ''.$desig, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, 'UAN No'.$txt, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$uan, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
+$pdf->MultiCell(45, 9, ''.$uan, 1, 'J', 1, 0, '', '', true, 0, true     , true, 12, 'T');
 
 
 $pdf->Ln();
@@ -299,7 +300,7 @@ $pdf->Ln();
 $pdf->MultiCell(45, 9, 'Department', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, ''.$dep, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
 $pdf->MultiCell(45, 9, 'Bank Name'.$txt, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$bank, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
+$pdf->MultiCell(45, 9, ''.$bank, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
 $pdf->Ln();
@@ -532,7 +533,7 @@ $pdf->Ln();
 
 // Vertical alignment
 $pdf->MultiCell(90, 11, 'Amount in Words', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(90, 11, ''.$amountword.' only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(90, 11, ''.$amountword.'Rupees only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
 $pdf->Ln();
