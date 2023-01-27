@@ -95,6 +95,7 @@ if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
             $hi = $_POST['hi'];
             $sa = $hi + $esic + $epfe;
             $gs = $_POST['gs'];
+            $lop = $_POST['lop'];
             $td = $epfe+$esic+$hi;
             $twd = $_POST['twd'];
             $pd = $_POST['pd'];
@@ -148,6 +149,7 @@ if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
                                 <p><input class="form-control" placeholder="TDS" name="tds"></p>
                                 <p><input class="form-control" placeholder="health insurance" name="hi"></p>
                                 <p><input class="form-control" placeholder="Gross Salary" name="gs"></p>
+                                <p><input class="form-control" placeholder="LOP" name="lop"></p>
                                 <p><input class="form-control" placeholder="Total working days" name="twd"></p>
                                 <p><input class="form-control" placeholder="Paid days" name="pd"></p>
                                 <!-- <p><input class="form-control" placeholder="Total Dediction" name="td"></p> -->
