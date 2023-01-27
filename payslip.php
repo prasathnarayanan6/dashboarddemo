@@ -510,7 +510,7 @@ $pdf->Ln();
 // Vertical alignment
 $pdf->MultiCell(45, 9, 'Special Allowances', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, 'Rs '.$sa, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, '', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 9, 'LOP Days', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, '', 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
 
 
