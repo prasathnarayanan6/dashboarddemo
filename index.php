@@ -241,7 +241,7 @@ if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
                                     <div class="col">
                                          <!-- <span class="h6 font-semibold text-muted text-sm d-block mb-2">Employee</span> -->
                                         <!-- <span class="h3 font-bold mb-0">75</span> -->
-                                        <div class=""><img src="./images/<?=$show['photo'];?>" style="border-radius:05px;" class="img-fluid" width="100px" height=""></img></div>
+                                        <div class=""><img src="./images/<?=$show['photo'];?>" style="border-radius:05px;" class="img-fluid rounded-circle" width="100px" height=""></img></div>
 
                                     </div>
                                     <div class="col-auto">
