@@ -203,7 +203,7 @@ if(isset($_GET['id']) && isset($_GET['date'])){
         $sa=$row['sa'];
         $epfe=$row['epfe'];
         $epfr=$row['epfr'];
-        $esic=$row['tds'];
+        $esic=$row['esic'];
         $tds=$row['tds'];
         $hi=$row['hi'];
         $gs=$row['gs'];
@@ -299,7 +299,7 @@ $pdf->MultiCell(45, 9, ''.$uan, 1, 'J', 1, 0, '', '', true, 0, true     , true, 
 $pdf->Ln();
 // Vertical alignment
 $pdf->MultiCell(45, 9, 'Department', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$dep, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
+$pdf->MultiCell(45, 9, ''.$dep, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, 'Bank Name'.$txt, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, ''.$bank, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
@@ -484,7 +484,7 @@ $pdf->Ln();
 // Vertical alignment
 $pdf->MultiCell(45, 9, 'House Rent Allowances', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, 'Rs '.$hra, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, 'Health Insurance/ESI'.$txt, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 9, 'Health Insurance'.$txt, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, 'Rs '.$hi, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
