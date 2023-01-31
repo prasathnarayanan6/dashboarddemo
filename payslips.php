@@ -90,17 +90,17 @@ if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
             }
             $epfe = $pf;
             $epfr = $pf;
-            $esic = ($salary)*0.0075;
+            $esic = $_POST['esic'];
             $tds = $_POST['tds'];
             $hi = $_POST['hi'];
-            $sa = $hi + $esic + $epfe;
+            $sa = $hi + $esic + $epfr;
             $gs = $_POST['gs'];
             $lop = $_POST['lop'];
             $td = $epfe+$esic+$hi;
             $twd = $_POST['twd'];
             $pd = $_POST['pd'];
             $na = $gs-$td;
-            $query1 = "insert into deduction(id,month,salary,basic,da,hra,pf,sa,epfe,epfr,esic,tds,hi,gs,td,twd,pd,na) values('$ids', '$month', '$salary', '$basic','$da','$hra','$pf', '$sa', '$epfe', '$epfr', '$esic', '$tds', '$hi', '$gs', '$td', '$twd', '$pd', '$na')";
+            $query1 = "insert into deduction(id,month,salary,basic,da,hra,pf,sa,epfe,epfr,esic,tds,hi,gs,lop,td,twd,pd,na) values('$ids', '$month', '$salary', '$basic','$da','$hra','$pf', '$sa', '$epfe', '$epfr', '$esic', '$tds', '$hi', '$gs', '$lop', '$td', '$twd', '$pd', '$na')";
             if($conn->query($query1)==TRUE){
                  echo "<script>
                  Swal.fire(
@@ -146,6 +146,7 @@ if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
                                 <!-- <p><input class="form-control" placeholder="EPF Employee Con"  name="epfe"></p> 
                                 <p><input class="form-control" placeholder="EPF Employer Con"  name="epfr"></p>-->
                                 <!-- <p><input class="form-control" placeholder="ESIC" name="esic"></p> -->
+                                <p><input class="form-control" placeholder="ESIC" name="esic"></p>
                                 <p><input class="form-control" placeholder="TDS" name="tds"></p>
                                 <p><input class="form-control" placeholder="health insurance" name="hi"></p>
                                 <p><input class="form-control" placeholder="Gross Salary" name="gs"></p>

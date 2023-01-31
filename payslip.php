@@ -30,8 +30,8 @@ class MYPDF extends TCPDF{
     // Page footer
     public function Footer() {
         
-        $image_file = K_PATH_IMAGES."footer.jpg"; 
-        $this->Image($image_file, 0, 270, 210, "", "JPG", "", 'B', false, 300, "", false, false, 0, false, false, false);
+        $image_file = K_PATH_IMAGES."footerr.jpg"; 
+        $this->Image($image_file, 0, 270, 210, 0, "", "JPG", "", 'B', false, 300, "", false, false, 0, false, false, false);
         // Position at 15 mm from bottom 
         $this->SetY(0);
         // Set font 
@@ -199,7 +199,7 @@ if(isset($_GET['id']) && isset($_GET['date'])){
         $salary=$row["salary"];
         $basic = $row["basic"];
         $da=$row["da"];
-        $hra=$row["pf"];
+        $hra=$row["hra"];
         $sa=$row['sa'];
         $epfe=$row['epfe'];
         $epfr=$row['epfr'];
@@ -207,6 +207,7 @@ if(isset($_GET['id']) && isset($_GET['date'])){
         $tds=$row['tds'];
         $hi=$row['hi'];
         $gs=$row['gs'];
+        $lop = $row['lop']; 
         $td=$row['td'];
         $twd=$row['twd'];
         $pd = $row['pd'];
@@ -510,8 +511,8 @@ $pdf->Ln();
 // Vertical alignment
 $pdf->MultiCell(45, 9, 'Special Allowances', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 9, 'Rs '.$sa, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, 'LOP Days', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, '', 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
+$pdf->MultiCell(45, 9, 'Loss of pay', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 9, ''.$lop, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
 
 
 $pdf->Ln();
@@ -533,7 +534,7 @@ $pdf->Ln();
 
 // Vertical alignment
 $pdf->MultiCell(90, 11, 'Amount in Words', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(90, 11, ''.$amountword.'Rupees only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(90, 11, ''.$amountword.'rupees only', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
 $pdf->Ln();
@@ -610,7 +611,7 @@ $pdf->Ln();
 // }
 // $html .= '</table>';
 // $pdf->writeHTML($html, true, false, true, false, '');
-$html = '<div></div><img src="./TCPDF/examples/images/InShot_20230124_154749554.jpg" width="145"></img><h4>Naznin Nisha</h4>
+$html = '<div></div><img src="./TCPDF/examples/images/InShot_20230124_154749554.jpg" width="200"></img><h4>Naznin Nisha</h4>
 <h3>HR &amp; Legal Manager</h3>';
 $pdf->writeHTML($html, true, false, true, false, '');
 
