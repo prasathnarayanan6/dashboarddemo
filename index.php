@@ -267,7 +267,7 @@ if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
                                     <span class="text-nowrap text-xs text-muted mr-2"><?php echo $show['desig']; ?></span>
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
                     </div>
                     <?php }} ?>
     </div>
