@@ -82,11 +82,12 @@ if(!isset($_SESSION['EmpID']) && !isset($_SESSION['password'])){
             $basic = ($salary)/2;
             $da = ($salary)*0.20;
             $hra = ($salary)*0.30;
-            if($salary>15000){
+            $slab = $basic + $da;
+            if($slab>15000){
                 $pf=15000*0.12;
             }
             else{
-                $pf=($salary-$hra)*0.12;
+                $pf=($slab)*0.12;
             }
             $epfe = $pf;
             $epfr = $pf;

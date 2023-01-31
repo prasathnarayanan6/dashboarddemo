@@ -263,6 +263,12 @@ if(isset($_GET['id']) && isset($_GET['date'])){
 } 
 $amountword = convertNumber($na);
 
+// $text = $desig;
+// $text = trim($text);
+// $text = preg_replace('/\s+/', ' ', $text);
+
+// // Pass the cleaned up text to TCPDF's text adding function
+// $pdf->Write(0, $text, '', 0, 'L', true, 0, false, false, 0);
   
         //$salary = $row["salary"];
         //$ded = $row["deduction"];
@@ -274,10 +280,10 @@ $amountword = convertNumber($na);
 $pdf->SetFillColor(255, 255, 255);
 
 // Vertical alignment
-$pdf->MultiCell(45, 9, 'Employee Name', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$name, 1, 'J', 1, 0, '', '', true,0,true,true, 12, 'T');
-$pdf->MultiCell(45, 9, 'Total Working Days', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$twd, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
+$pdf->MultiCell(45, 11, 'Employee Name', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 11, ''.$name, 1, 'L', 1, 0, '', '', true,0,true,true, 12, 'T');
+$pdf->MultiCell(45, 11, 'Total Working Days', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 11, ''.$twd, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, 'T');
 
 
 $pdf->Ln();
@@ -290,10 +296,11 @@ $pdf->MultiCell(45, 9, ''.$pd, 1, 'J', 1, 0, '', '', true, 0, false, true, 12, '
 
 $pdf->Ln();
 // Vertical alignment
-$pdf->MultiCell(45, 9, 'Designation', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$desig, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, 'UAN No'.$txt, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 9, ''.$uan, 1, 'J', 1, 0, '', '', true, 0, true     , true, 12, 'T');
+$pdf->MultiCell(45, 12, 'Designation', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+// $pdf->MultiCell(0, $text, '', 0, 'L', true, 0, false, false, 0);
+$pdf->MultiCell(45, 12, ''.$desig, 1, 'L', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 12, 'UAN No'.$txt, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 12, ''.$uan, 1, 'J', 1, 0, '', '', true, 0, true     , true, 12, 'T');
 
 
 $pdf->Ln();
