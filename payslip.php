@@ -473,7 +473,7 @@ $pdf->Ln();
 // Vertical alignment
 $pdf->MultiCell(45, 21, 'Basic Salary', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 21, 'Rs '.$basic, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
-$pdf->MultiCell(45, 21, 'EPF<br>Employee Contribution<br>Employee Contribution', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
+$pdf->MultiCell(45, 21, 'Employee Contribution<br>Employee Contribution<br>EPF', 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 $pdf->MultiCell(45, 21, 'Rs '.$epfe.'<br>Rs '.$epfr, 1, 'J', 1, 0, '', '', true, 0, true, true, 12, 'T');
 
 
